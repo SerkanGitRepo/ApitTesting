@@ -1,0 +1,65 @@
+[
+   {
+      "requests":[
+         {
+            "name":"Üye Ol Sözleşme Görüntüle",
+            "data":[
+               {
+                  "SystemT":"P",
+                  "ContractTypeT":1
+               },
+               {
+                  "SystemT":"P",
+                  "ContractTypeT":2
+               },
+               {
+                  "SystemT":"P",
+                  "ContractTypeT":3
+               }
+            ]
+         },
+         {
+            "name":"Tahliye Talep Et",
+            "data":[
+               {
+                  "TcknT":"46771180992",
+                  "AssuranceReturnTypeT":"\"4\""
+               },
+               {
+                  "TcknT":"\"\"",
+                  "AssuranceReturnTypeT":"\"3\""
+               }
+            ]
+         },
+         {
+            "name":"SSS ve Enerji Tasarruf",
+            "data":[
+               {
+                  "QuestionCategoryT":"[0]",
+                  "QuestionGroupT":"\"\""
+               },
+               {
+                  "QuestionCategoryT":"[0]",
+                  "QuestionGroupT":"\"0\""
+               },
+               {
+                  "QuestionCategoryT":"[0]",
+                  "QuestionGroupT":"\"1\""
+               },
+               {
+                  "QuestionCategoryT":"[0]",
+                  "QuestionGroupT":"\"2\""
+               },
+               {
+                  "QuestionCategoryT":"[1]",
+                  "QuestionGroupT":"\"\""
+               },
+               {
+                  "QuestionCategoryT":"[0,1]",
+                  "QuestionGroupT":"\"\""
+               }
+            ]
+         }
+      ]
+   }
+]
