@@ -50,7 +50,7 @@ reporter:{
 			_logtype='WARN';
 		}else{
 			_logtype='ERROR';
-			createJiraTask(_servicename,_assertionname,_assertion.error.message)
+			//createJiraTask(_servicename,_assertionname,_assertion.error.message)
 		}
 		_message=_assertion.error.message;
 	} else{
