@@ -24,7 +24,7 @@ delayRequest: 1000,
 reporters: ['htmlextra'],
 reporter:{
   htmlextra: {
-  'reporter-htmlextra-export': 'newman/Enerji_OIS_API_Report.html'
+    export: 'newman/Enerji_OIS_API_Report.html'
   }
 }
 
