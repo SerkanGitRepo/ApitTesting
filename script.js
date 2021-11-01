@@ -39,25 +39,24 @@ reporter:{
 	  _dateofLog = new Date();
 	_assertion = this._events.assertion[_testCaseIndex].context.summary.run.executions[_testCaseIndex].assertions[i];
 	
-	_timestamp= _dateofLog;
-	_projectname='Enerji Online İşlemler';
-	_servicename=data.item.name;
-	_assertionname=_assertion.assertion;
+	_timestamp= JSON.stringify(_dateofLog);
+	_projectname=JSON.stringify('Enerji Online İşlemler');
+	_servicename=JSON.stringify(data.item.name);
+	_assertionname=JSON.stringify(_assertion.assertion);
 	_responsetime=this.summary.run.executions[_testCaseIndex].response.responseTime;
-	_responseschema='nok';
+	_responseschema=JSON.stringify('nok');
 	if (_assertion.error){
 		if (_assertionname=='Response time is less than 300ms' && _responsetime>300){
-			_logtype='WARN';
+			_logtype=JSON.stringify('WARN');
 		}else{
-			_logtype='ERROR';
+			_logtype=JSON.stringify('ERROR');
 			createJiraTask(_servicename,_assertionname,_assertion.error.message)
 		}
-		_message=_assertion.error.message;
+		_message=JSON.stringify(_assertion.error.message);
 	} else{
-		_logtype='INFO';
-		_message='OK';
+		_logtype=JSON.stringify('INFO');
+		_message=JSON.stringify('OK');
 	}
-	
 		writeToLog(_timestamp,_projectname,_servicename,_responsetime,_responseschema,_logtype,_assertionname,_message);
 	}
 	_testCaseIndex=_testCaseIndex+1;
