@@ -46,7 +46,7 @@ reporter:{
 	_responsetime=this.summary.run.executions[_testCaseIndex].response.responseTime;
 	_responseschema=JSON.stringify('nok');
 	if (_assertion.error){
-		if (_assertionname=='Response time is less than 300ms' && _responsetime>300){
+		if (_assertionname=='\"Response time is less than 300ms\"' && _responsetime>300){
 			_logtype=JSON.stringify('WARN');
 		}else{
 			_logtype=JSON.stringify('ERROR');
