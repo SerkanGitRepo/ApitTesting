@@ -44,7 +44,7 @@ reporter:{
 	_servicename=JSON.stringify(data.item.name);
 	_assertionname=JSON.stringify(_assertion.assertion);
 	_responsetime=this.summary.run.executions[_testCaseIndex].response.responseTime;
-	_responseschema=JSON.stringify('nok');
+//	_responseschema=JSON.stringify('nok');
 	if (_assertion.error){
 		if (_assertionname=='\"Response time is less than 300ms\"' && _responsetime>300){
 			_logtype=JSON.stringify('WARN');
@@ -57,7 +57,8 @@ reporter:{
 		_logtype=JSON.stringify('INFO');
 		_message=JSON.stringify('OK');
 	}
-		writeToLog(_timestamp,_projectname,_servicename,_responsetime,_responseschema,_logtype,_assertionname,_message);
+		//writeToLog(_timestamp,_projectname,_servicename,_responsetime,_responseschema,_logtype,_assertionname,_message);
+		writeToLog(_timestamp,_projectname,_servicename,_responsetime,_logtype,_assertionname,_message);
 	}
 	_testCaseIndex=_testCaseIndex+1;
 }
@@ -66,14 +67,14 @@ reporter:{
 
 
 
-function writeToLog(_timestamp,_projectname,_servicename,_responsetime,_responseschema,_logtype,_assertionname,_message){
+function writeToLog(_timestamp,_projectname,_servicename,_responsetime,_logtype,_assertionname,_message){
 	
 	const newLogObject={
 		timestamp:_timestamp,
 		projectname:_projectname,
 		servicename:_servicename,
 		responsetime:_responsetime,
-		responseschema:_responseschema,
+//		responseschema:_responseschema,
 		logtype:_logtype,
 		assertionname:_assertionname,
 		message:_message
