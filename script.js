@@ -90,7 +90,7 @@ function createJiraTask(_srvcnm,_assertname,_errmsg){
   	host: 'btrota.zorlu.com',
 	basic_auth:{
   	username: 'serkanaks',
-  	password: 'Zorlu.4178'
+  	password: 'Zorlu.4179'
 	},
   	strictSSL: true
 });
