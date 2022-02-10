@@ -96,6 +96,7 @@ function createJiraTask(_srvcnm,_assertname,_errmsg){
   	strictSSL: true
 });
 
+
 var myDate = new Date("2021/10/30");
 
 jira.issue.createIssue({
