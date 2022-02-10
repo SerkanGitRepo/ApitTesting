@@ -65,7 +65,6 @@ reporter:{
 });
 
 
-
 function writeToLog(_timestamp,_projectname,_servicename,_responsetime,_logtype,_assertionname,_message){
 	
 	const newLogObject={
