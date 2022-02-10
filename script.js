@@ -62,9 +62,6 @@ reporter:{
 	}
 	_testCaseIndex=_testCaseIndex+1;
 }
-})
-.on('unhandledRejection', (reason, promise) => {
-  // do something
 });
 
 
