@@ -1,0 +1,775 @@
+{
+	"info": {
+		"_postman_id": "be66aa08-bad7-4bd9-a4e1-f94cb860f61e",
+		"name": "Test Otomasyon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Banka Bilgi",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" const schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"Message\",\r",
+									"        \"IsSucces\",\r",
+									"        \"BankaDetay\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"Message\": {\r",
+									"            \"$id\": \"#/properties/Message\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Message schema\",\r",
+									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"            \"default\": \"\",\r",
+									"            \"examples\": [\r",
+									"                \"Banka verileri başarıyla çekilmiştir.\"\r",
+									"            ]\r",
+									"        },\r",
+									"        \"IsSucces\": {\r",
+									"            \"$id\": \"#/properties/IsSucces\",\r",
+									"            \"type\": \"boolean\",\r",
+									"            \"title\": \"The IsSucces schema\",\r",
+									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"            \"default\": false,\r",
+									"            \"examples\": [\r",
+									"                true\r",
+									"            ]\r",
+									"        },\r",
+									"        \"BankaDetay\": {\r",
+									"            \"$id\": \"#/properties/BankaDetay\",\r",
+									"            \"type\": \"array\",\r",
+									"            \"title\": \"The BankaDetay schema\",\r",
+									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"            \"default\": [],\r",
+									"            \"additionalItems\": true,\r",
+									"            \"items\": {\r",
+									"                \"$id\": \"#/properties/BankaDetay/items\",\r",
+									"                \"anyOf\": [\r",
+									"                    {\r",
+									"                        \"$id\": \"#/properties/BankaDetay/items/anyOf/0\",\r",
+									"                        \"type\": \"object\",\r",
+									"                        \"title\": \"The first anyOf schema\",\r",
+									"                        \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                        \"default\": {},\r",
+									"                        \"examples\": [\r",
+									"                            {\r",
+									"                                \"BankaAdi\": \"Selçuk Toker\",\r",
+									"                                \"VezneIslemleri\": \"True\",\r",
+									"                                \"AboneTahliyeIslemleri\": \"False\",\r",
+									"                                \"IL\": \"\",\r",
+									"                                \"ILCE\": \"\",\r",
+									"                                \"Enlem\": \"38.990758\",\r",
+									"                                \"Boylam\": \"29.395706\",\r",
+									"                                \"AcikAdres\": \"Özyurt mh. Demirel cd. No:6\",\r",
+									"                                \"Telefon\": \"5327387373\"\r",
+									"                            }\r",
+									"                        ],\r",
+									"                        \"required\": [\r",
+									"                            \"BankaAdi\",\r",
+									"                            \"VezneIslemleri\",\r",
+									"                            \"AboneTahliyeIslemleri\",\r",
+									"                            \"IL\",\r",
+									"                            \"ILCE\",\r",
+									"                            \"Enlem\",\r",
+									"                            \"Boylam\",\r",
+									"                            \"AcikAdres\",\r",
+									"                            \"Telefon\"\r",
+									"                        ],\r",
+									"                        \"properties\": {\r",
+									"                            \"BankaAdi\": {\r",
+									"                                \"$id\": \"#/properties/BankaDetay/items/anyOf/0/properties/BankaAdi\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The BankaAdi schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"Selçuk Toker\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"VezneIslemleri\": {\r",
+									"                                \"$id\": \"#/properties/BankaDetay/items/anyOf/0/properties/VezneIslemleri\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The VezneIslemleri schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"True\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"AboneTahliyeIslemleri\": {\r",
+									"                                \"$id\": \"#/properties/BankaDetay/items/anyOf/0/properties/AboneTahliyeIslemleri\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The AboneTahliyeIslemleri schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"False\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"IL\": {\r",
+									"                                \"$id\": \"#/properties/BankaDetay/items/anyOf/0/properties/IL\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The IL schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"ILCE\": {\r",
+									"                                \"$id\": \"#/properties/BankaDetay/items/anyOf/0/properties/ILCE\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The ILCE schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"Enlem\": {\r",
+									"                                \"$id\": \"#/properties/BankaDetay/items/anyOf/0/properties/Enlem\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The Enlem schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"38.990758\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"Boylam\": {\r",
+									"                                \"$id\": \"#/properties/BankaDetay/items/anyOf/0/properties/Boylam\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The Boylam schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"29.395706\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"AcikAdres\": {\r",
+									"                                \"$id\": \"#/properties/BankaDetay/items/anyOf/0/properties/AcikAdres\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The AcikAdres schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"Özyurt mh. Demirel cd. No:6\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"Telefon\": {\r",
+									"                                \"$id\": \"#/properties/BankaDetay/items/anyOf/0/properties/Telefon\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The Telefon schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"5327387373\"\r",
+									"                                ]\r",
+									"                            }\r",
+									"                        },\r",
+									"                        \"additionalProperties\": true\r",
+									"                    }\r",
+									"                ]\r",
+									"            }\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Content-Type header is application/json\", () => {\r",
+									"  pm.expect(pm.response.headers.get('content-type')).to.eql('application/json; charset=UTF-8');\r",
+									"});\r",
+									"  const responseJson = pm.response.json();\r",
+									"  pm.test(\"Banka Bilgi Response\", () => {\r",
+									"      pm.expect(responseJson.IsSucces).to.eql(true);\r",
+									"});\r",
+									"  pm.test(\"Banka Bilgi Schema\", () => {\r",
+									"      pm.expect(responseJson.BankaDetay).to.be.an(\"array\");\r",
+									"});\r",
+									"  pm.test(\"Schema kontrol\", () => {\r",
+									"     pm.response.to.have.jsonSchema(schema);\r",
+									"  });   \r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1qa2ws3ed4rf",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "web_mobil",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"System\": \"P\",\r\n    \"Vezne\": \"\"\r\n}\r\n\r\n/*\r\nVezne = true (Vezne İşlemleri olan noktaları döner)\r\nVezne = false (Vezne İşlemleri olmayan noktaları döner)\r\nVezne = \"\" (Tüm noktaları döner)\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://poqa.zorlu.com/RESTAdapter/mobil/v2/bankaDetayP",
+							"protocol": "https",
+							"host": [
+								"poqa",
+								"zorlu",
+								"com"
+							],
+							"path": [
+								"RESTAdapter",
+								"mobil",
+								"v2",
+								"bankaDetayP"
+							]
+						},
+						"description": "https://poqa.zorlu.com/RESTAdapter/mobil/uyeOl"
+					},
+					"response": []
+				},
+				{
+					"name": "Sürüm Yönetim",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Content-Type header is application/json\", () => {\r",
+									"  pm.expect(pm.response.headers.get('content-type')).to.eql('application/json; charset=UTF-8');\r",
+									"\r",
+									"  const responseJson = pm.response.json();\r",
+									"  pm.test(\"Sürüm Yönetim\", () => {\r",
+									"  pm.expect(responseJson.processStatus).to.be.exist;\r",
+									"  pm.expect(responseJson.serverTime).to.be.exist;\r",
+									"});\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1qa2ws3ed4rf",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "web_mobil",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://poqa.zorlu.com/RESTAdapter/mobil/v2/check-update?platform=1&platformversion=2&appversion=0.0.1",
+							"protocol": "https",
+							"host": [
+								"poqa",
+								"zorlu",
+								"com"
+							],
+							"path": [
+								"RESTAdapter",
+								"mobil",
+								"v2",
+								"check-update"
+							],
+							"query": [
+								{
+									"key": "platform",
+									"value": "1"
+								},
+								{
+									"key": "platformversion",
+									"value": "2"
+								},
+								{
+									"key": "appversion",
+									"value": "0.0.1"
+								}
+							]
+						},
+						"description": "https://poqa.zorlu.com/RESTAdapter/mobil/uyeOl"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 300ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Üye Ol Sözleşme Görüntüle",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Content-Type header is application/json\", () => {\r",
+									"  pm.expect(pm.response.headers.get('content-type')).to.eql('application/json; charset=UTF-8');\r",
+									"\r",
+									"  const responseJson = pm.response.json();\r",
+									"  pm.test(\"Üye Ol Sözleşme Görüntüle\", () => {\r",
+									"  pm.expect(responseJson.Payload.MessageId).to.eql(26);\r",
+									"  pm.expect(responseJson.Payload.ContractText).to.be.a(\"string\");\r",
+									"  pm.expect(responseJson.Payload.ContractText.length).to.greaterThan(300);\r",
+									"});\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1qa2ws3ed4rf",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "web_mobil",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"System\": {{SystemT}},\r\n    \"ContractType\": {{ContractTypeT}}\r\n}\r\n/*\r\n1 - IYSMetni - Açık Rıza Metni\r\n2 - GizlilikSozlesmesi - Aydınlatma Metni\r\n3 - UyelikSozlesmesi - Üyelik Sözleşmesi\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://poqa.zorlu.com/RESTAdapter/mobil/v2/gizlilikSozGoruntule",
+							"protocol": "https",
+							"host": [
+								"poqa",
+								"zorlu",
+								"com"
+							],
+							"path": [
+								"RESTAdapter",
+								"mobil",
+								"v2",
+								"gizlilikSozGoruntule"
+							]
+						},
+						"description": "https://poqa.zorlu.com/RESTAdapter/mobil/uyeOl"
+					},
+					"response": []
+				},
+				{
+					"name": "Ödeme Zaman Kontrol",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema={\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"IsSucces\",\r",
+									"        \"Payload\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"IsSucces\": {\r",
+									"            \"$id\": \"#/properties/IsSucces\",\r",
+									"            \"type\": \"boolean\",\r",
+									"            \"title\": \"The IsSucces schema\",\r",
+									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"            \"default\": false,\r",
+									"            \"examples\": [\r",
+									"                true\r",
+									"            ]\r",
+									"        },\r",
+									"        \"Payload\": {\r",
+									"            \"$id\": \"#/properties/Description\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"default\": \"{}\",\r",
+									"             \"required\": [\r",
+									"                \"Description\",\r",
+									"                \"PaymentBeginTime\",\r",
+									"                \"PaymentEndTime\",\r",
+									"                \"MessageId\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"Description\": {\r",
+									"                    \"$id\": \"#/properties/Description\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The PaymentBeginTime schema\",\r",
+									"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                    \"default\": \"\",\r",
+									"                    \"examples\": [\r",
+									"                        \"Ödeme alınabilir\"\r",
+									"                    ]\r",
+									"                },\r",
+									"                \"PaymentBeginTime\": {\r",
+									"                    \"$id\": \"#/properties/PaymentBeginTime\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The PaymentBeginTime schema\",\r",
+									"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                    \"default\": \"\",\r",
+									"                    \"examples\": [\r",
+									"                        \"23:45\"\r",
+									"                    ]\r",
+									"                },\r",
+									"                \"PaymentEndTime\": {\r",
+									"                    \"$id\": \"#/properties/PaymentEndTime\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The PaymentEndTime schema\",\r",
+									"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                    \"default\": \"\",\r",
+									"                    \"examples\": [\r",
+									"                        \"00:15\"\r",
+									"                    ]\r",
+									"                },\r",
+									"                \"MessageId\": {\r",
+									"                    \"$id\": \"#/properties/PaymentEndTime\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The PaymentEndTime schema\",\r",
+									"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                    \"default\": \"\",\r",
+									"                    \"examples\": [\r",
+									"                        \"29\"\r",
+									"                    ]\r",
+									"                }\r",
+									"            }\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Content-Type header is application/json\", () => {\r",
+									"  pm.expect(pm.response.headers.get('content-type')).to.eql('application/json; charset=UTF-8');\r",
+									"\r",
+									"  const responseJson = pm.response.json();\r",
+									"  pm.test(\"Ödeme Zaman Kontrol\", () => {\r",
+									"  pm.expect(responseJson.IsSucces).to.eql(true);\r",
+									"  pm.expect(responseJson.Payload.PaymentBeginTime).to.be.exist;\r",
+									"  pm.expect(responseJson.Payload.PaymentEndTime).to.be.exist;\r",
+									"});\r",
+									"});\r",
+									"\r",
+									"  pm.test(\"Schema kontrol\", () => {\r",
+									"     pm.response.to.have.jsonSchema(schema);\r",
+									"  }); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1qa2ws3ed4rf",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "web_mobil",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "SessionToken",
+								"value": "ABC",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Amount\":{{ContractTypeT}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://poqa.zorlu.com/RESTAdapter/mobil/v2/odemeZamanKontrolEt",
+							"protocol": "https",
+							"host": [
+								"poqa",
+								"zorlu",
+								"com"
+							],
+							"path": [
+								"RESTAdapter",
+								"mobil",
+								"v2",
+								"odemeZamanKontrolEt"
+							]
+						},
+						"description": "https://poqa.zorlu.com/RESTAdapter/mobil/uyeOl"
+					},
+					"response": []
+				},
+				{
+					"name": "SSS ve Enerji Tasarruf",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Content-Type header is application/json\", () => {\r",
+									"  pm.expect(pm.response.headers.get('content-type')).to.eql('application/json; charset=UTF-8');\r",
+									"\r",
+									"  const responseJson = pm.response.json();\r",
+									"  pm.test(\"SSS ve Enerji Tasarruf\", () => {\r",
+									" pm.expect(responseJson.IsSucces).to.be.eql(true,responseJson.Message);\r",
+									"});\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1qa2ws3ed4rf",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "web_mobil",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"System\": \"P\",\r\n    \"QuestionCategory\": {{QuestionCategoryT}},\r\n    \"QuestionGroup\": {{QuestionGroupT}}\r\n}\r\n\r\n/* \r\n\r\n\r\n\r\nQuestionCategory:\r\n[0] : SSS\r\n[1] : Enerji Tassarruf\r\n[0,1] : SSS + Enerji Tassarruf\r\n*/\r\n\r\n/*\r\nQuestionGroup:\r\n\"\" : Tüm Soru/Cevap Getirir \r\n\"0\" : Popüler Sorular\r\n\"1\" : Abonelik Soruları\r\n\"2\" : Fatura Soruları\r\n\r\n            \"QuestionGroup\": 2,\r\n            \"QuestionHeaderGroup\": \"Fatura Soruları\",\r\n*/\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://poqa.zorlu.com/RESTAdapter/mobil/v2/sss",
+							"protocol": "https",
+							"host": [
+								"poqa",
+								"zorlu",
+								"com"
+							],
+							"path": [
+								"RESTAdapter",
+								"mobil",
+								"v2",
+								"sss"
+							]
+						},
+						"description": "https://poqa.zorlu.com/RESTAdapter/mobil/uyeOl"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"//Load from file",
+					"if (typeof pm.variables.get('requestsData') !== 'object') {",
+					"    pm.variables.set('requestsData', pm.iterationData.toObject());",
+					"}",
+					"",
+					"const requestsData = pm.variables.get('requestsData');",
+					"",
+					"if (typeof requestsData !== 'object' || Object.keys(requestsData).length===0) {",
+					"    console.info('No external data provided or object is empty.');",
+					"    return;",
+					"}",
+					"",
+					"//Find the current request",
+					"const currentRequest = requestsData.requests.filter(({name}) => name === pm.info.requestName)[0];",
+					"",
+					"//Skip the rest since we have no data",
+					"if(!currentRequest){",
+					"    console.info ('Request ' +  pm.info.requestName + ' has no data defined.')",
+					"    return;",
+					"}",
+					"",
+					"//Expose variables",
+					"const variables = currentRequest.data.shift();",
+					"",
+					"for(const [key,value] of Object.entries(variables)){",
+					"    pm.variables.set(key,value);",
+					"}",
+					"",
+					"pm.variables.set('requestsData',requestsData);",
+					"",
+					"//Decide where to go next",
+					"if(currentRequest.data.length>0){",
+					"    postman.setNextRequest(pm.info.requestName);",
+					"}",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "SystemT",
+			"value": "P"
+		},
+		{
+			"key": "ContractTypeT",
+			"value": "1"
+		},
+		{
+			"key": "AmountT",
+			"value": "500.00"
+		},
+		{
+			"key": "QuestionCategoryT",
+			"value": "[0]"
+		},
+		{
+			"key": "QuestionGroupT",
+			"value": "\"\""
+		}
+	]
+}
