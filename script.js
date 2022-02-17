@@ -17,9 +17,9 @@ _testCaseIndex=0,
     results = [];
 
 newman.run({
-collection: require('./service/OEPSAS_postman_collection.json'), 
-iterationData: require('./service/TestDataOEPSAS.json'),
-folder: 'GET', 
+collection: require('./service/TestPostmanOEPSASCollection.json'), 
+iterationData: require('./service/TestDataOESPAS.json'),
+folder: ['GET','POST'], 
 delayRequest: 1000, 
 reporters: ['htmlextra'],
 reporter:{
